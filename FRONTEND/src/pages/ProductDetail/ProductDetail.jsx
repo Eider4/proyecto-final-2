@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useFetch } from "../../Hooks/UseFetch";
+import { CartContext } from "../../context/Cart/CartContext";
+import { CartProvaider } from "../../context/Cart/CartProvaider";
 
 export default function ProductDetail() {
   const { id } = useParams();
-  const { data } = useFetch(`http://localhost:4000/${id -1}`);
+  const { data } = useFetch(`http://localhost:4000/${id - 1}`);
   const [imgArray, setImgArray] = useState([]);
   const [ImgPrinsipal, setImgPrinsipal] = useState("");
 
+  const { addtoCart } = useContext(CartContext);
   useEffect(() => {
     if (data && data.DIRECCION_IMAGEN) {
       setImgArray(data.DIRECCION_IMAGEN);
       setImgPrinsipal(data.IMAGEN);
     }
   }, [data]);
-
+  
   if (!data) return <p>Cargando...</p>;
 
   return (
@@ -70,7 +73,10 @@ export default function ProductDetail() {
             {data.DIMENSIONES}
           </p>
           <p className="text-green-600 mb-4">{data.PROMOCION}</p>
-          <button className="w-full lg:w-auto bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-700 transform hover:scale-105 transition duration-300 ease-in-out">
+          <button
+            onClick={() => addtoCart(data)}
+            className="w-full lg:w-auto bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-700 transform hover:scale-105 transition duration-300 ease-in-out"
+          >
             Añadir al carrito
           </button>
         </div>

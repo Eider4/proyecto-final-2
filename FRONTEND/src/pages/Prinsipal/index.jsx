@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 
 export default function Principal() {
-  const { data } = useFetch("http://localhost:3001/products");
+  const { data } = useFetch("https://api-productos-categorias.vercel.app/products");
   const navigate = useNavigate();
 
   const handleProductClick = (id) => {

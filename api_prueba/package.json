@@ -7,7 +7,7 @@
     "api_categorias_productos": "json-server --watch api_categorias_productos.json --port 3002",
     "api_productos_copy": "json-server --watch api_productos_copy.json --port 4000",
     "start": "json-server --watch api_subcategorias.json  --port 5843",
-    "start:all": "npm-run-all --parallel start api_products api_categorias_productos api_productos_copy"
+    "start:all": "npm-run-all --parallel start api_categorias_productos api_productos_copy"
   },
   "author": "",
   "license": "ISC",

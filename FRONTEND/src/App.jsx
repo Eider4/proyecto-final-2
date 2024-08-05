@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Principal from "./pages/Prinsipal";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import Login from "./pages/Login/Login";
+import CarritoCompras from "./pages/Carrito/CarritoCompras";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/Carrito-Compras" element={<CarritoCompras />} />
       </Routes>
     </BrowserRouter>
   );

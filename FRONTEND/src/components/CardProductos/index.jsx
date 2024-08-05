@@ -9,10 +9,10 @@ export default function CarProducos({ TITULO, PRECIO, IMAGEN }) {
       <h2 className="text-xl font-bold text-gray-800 mb-1 truncate">{TITULO}</h2>
       <p className="text-md text-gray-500 mb-1 line-through">${PRECIO}</p>
       <div className="flex justify-between items-center">
-        <p className="text-lg font-bold text-red-600">
+        <p className="text-lg font-bold text-green-500">
           ${precioFinal.toFixed(2)}
         </p>
-        <div className="bg-green-600 text-white text-xs font-bold py-1 px-2 rounded">
+        <div className="bg-sky-600  text-white text-xs font-bold py-1 px-2 rounded">
           {10}% OFF
         </div>
       </div>

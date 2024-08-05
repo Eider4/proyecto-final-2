@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useFetch } from "../../Hooks/UseFetch";
 import {
   Car_icon,
@@ -10,6 +10,9 @@ import {
 } from "../../assets/Icons";
 import CarouselComponent from "./Carrusel";
 import Subcategorias from "./SubCategorias";
+import UseVerificacionUsario from "../../Hooks/UseVerificacionUusario";
+import { Link } from "react-router-dom";
+import { CartContext } from "../../context/Cart/CartContext";
 
 const images = [
   "https://club.involves.com/es/wp-content/uploads/2020/05/estrategias-promocion.png",
@@ -22,7 +25,8 @@ const Header = () => {
   const [MenuCategoria, setMenuCategoria] = useState(false);
   const [CategoriaMostar, setCategoriaMostar] = useState("");
   const itemsPerPage = 5;
-
+  const { User, registrado } = UseVerificacionUsario();
+  const {cart:u} = useContext(CartContext);
   const handleNext = () => {
     setStartIndex((prevIndex) =>
       prevIndex + itemsPerPage < data.length ? prevIndex + itemsPerPage : 0
@@ -59,11 +63,17 @@ const Header = () => {
           </span>
         </div>
         <nav className="flex justify-between gap-3">
-          <User_Icon />
-          <Car_icon />
-          <Corazon_icon />
-          <Diadema_Icon />
-          <Global_icon />
+          {registrado ? (
+            <>
+              <User_Icon />
+              <Car_icon />
+              <Corazon_icon />
+              <Diadema_Icon />
+              <Global_icon />
+            </>
+          ) : (
+            <Link to={"login"}>login</Link>
+          )}
         </nav>
       </header>
       <div>
@@ -80,7 +90,8 @@ const Header = () => {
               .map((item, i) => (
                 <div key={i} className="pl-1 pr-1 h-7 w-auto flex items-center">
                   <p
-                    className="text-xs whitespace-nowrap cursor-pointer"
+                    className="text-xs whitespace-nowrap cursor-pointer "
+                    style={{ fontSize: "14px" }}
                     onClick={() => guardarCategoriaLogalStorage(item)}
                   >
                     {item}

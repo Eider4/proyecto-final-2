@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import UseVerificacionUsario from "../../Hooks/UseVerificacionUusario";
 import {
   createUserWithEmailAndPassword,
@@ -8,11 +8,11 @@ import { auth } from "../../firebase/credenciales";
 import { useNavigate } from "react-router";
 
 export default function Login() {
-  const { registrado } = UseVerificacionUsario();
+  const { User, registrado } = UseVerificacionUsario();
   const [registrar, setRegistrar] = useState(false);
   const [correo, setCorreo] = useState("");
   const [contrasena, setContrasena] = useState("");
-
+  console.log(User);
   const onSubmitRegistrar = async (e) => {
     try {
       await createUserWithEmailAndPassword(auth, correo, contrasena);
@@ -20,22 +20,40 @@ export default function Login() {
       console.log("error al Registrar cuenta");
     }
   };
+  const navigate = useNavigate();
 
   const onSubmitIngresar = async (e) => {
     try {
       await signInWithEmailAndPassword(auth, correo, contrasena);
+      navigate(`/`);
     } catch (error) {
       console.log("error al Ingresar cuenta");
     }
   };
-  const navigate = useNavigate();
 
-  const Yalogeado = () => {
-    navigate(`/`);
+  const Yalogeado = async () => {
+    console.log(User);
+    try {
+      console.log("cargando...");
+      await fetch("http://localhost:1777/usuarios", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ email: correo, uid_usuario: User.uid }),
+      });
+      console.log("se pudo al enviar datos a la base de datos");
+    } catch (error) {
+      console.log("error al enviar datos a la base de datos", error);
+    }
   };
+  useEffect(() => {
+    if (User) {
+      Yalogeado();
+      navigate(`/`);
+    }
+  }, [User]);
+
   return (
     <div>
-      {registrado && <>{Yalogeado()}</>}
       {!registrado && (
         <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-red-400 to-pink-400">
           <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">

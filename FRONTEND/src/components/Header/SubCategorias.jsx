@@ -5,9 +5,9 @@ import { useNavigate } from "react-router";
 
 const Subcategorias = ({ setCategoriaMostar, CategoriaMostar }) => {
   const { data: subcategorias } = useFetch(
-    "http://localhost:3002/subcategorias"
+    "http://localhost:5813/subcategorias"
   );
-  const { data } = useFetch("http://localhost:3001/products");
+  const { data } = useFetch("https://api-productos-categorias.vercel.app/products");
 
   const [selectedSubcategory, setSelectedSubcategory] =
     useState(CategoriaMostar);

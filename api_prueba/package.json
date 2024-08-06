@@ -4,10 +4,10 @@
   "main": "index.js",
   "scripts": {
     "api_products": "json-server --watch api_productos.json --port 3001",
-    "api_categorias_productos": "json-server --watch api_categorias_productos.json --port 3002",
-    "api_productos_copy": "json-server --watch api_productos_copy.json --port 4000",
-    "start": "json-server --watch api_subcategorias.json  --port 5843",
-    "start:all": "npm-run-all --parallel start api_categorias_productos api_productos_copy"
+    "api_categorias_productos": "json-server --watch api_categorias_productos.json --port 3802",
+    "api_productos_copy": "json-server --watch api_productos_copy.json --port 4500",
+    "api_subcategorias": "json-server --watch api_subcategorias.json  --port 5813",
+    "start:all": "npm-run-all --parallel api_subcategorias api_products api_categorias_productos api_productos_copy"
   },
   "author": "",
   "license": "ISC",

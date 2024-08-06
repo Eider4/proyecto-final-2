@@ -6,7 +6,7 @@ import { CartProvaider } from "../../context/Cart/CartProvaider";
 
 export default function ProductDetail() {
   const { id } = useParams();
-  const { data } = useFetch(`http://localhost:4000/${id - 1}`);
+  const { data } = useFetch(`http://localhost:4500/${id - 1}`);
   const [imgArray, setImgArray] = useState([]);
   const [ImgPrinsipal, setImgPrinsipal] = useState("");
 

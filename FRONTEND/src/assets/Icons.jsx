@@ -6,8 +6,8 @@ export const Lupa_icon = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="size-7  bg-black w-7 h-[2.2rem]"
-      style={{ color: "#fff" }}
+      className="size-7 w-7 h-[2.2rem]"
+      style={{ color: "#444" }}
     >
       <path
         strokeLinecap="round"

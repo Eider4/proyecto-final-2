@@ -1,4 +1,4 @@
-export default function CarProducos({ TITULO, PRECIO, IMAGEN }) {
+export default function CarProducos({ TITULO, PRECIO, IMAGEN , FECHA_DE_LANZAMIENTO}) {
   const precioFinal = PRECIO - (PRECIO * 10) / 100;
 
   return (
@@ -6,6 +6,7 @@ export default function CarProducos({ TITULO, PRECIO, IMAGEN }) {
       <div className="h-60 w-full flex items-center justify-center mb-4 overflow-hidden">
         <img src={IMAGEN} alt={TITULO} className="object-contain w-full h-full" />
       </div>
+      <p>Fecha: {FECHA_DE_LANZAMIENTO}</p>
       <h2 className="text-xl font-bold text-gray-800 mb-1 truncate">{TITULO}</h2>
       <p className="text-md text-gray-500 mb-1 line-through">${PRECIO}</p>
       <div className="flex justify-between items-center">

@@ -13,6 +13,9 @@ import Subcategorias from "./SubCategorias";
 import UseVerificacionUsario from "../../Hooks/UseVerificacionUusario";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/Cart/CartContext";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase/credenciales";
+import InputBuscador from "./InputBuscador";
 
 const images = [
   "https://club.involves.com/es/wp-content/uploads/2020/05/estrategias-promocion.png",
@@ -20,29 +23,32 @@ const images = [
 ];
 
 const Header = () => {
-  const { data } = useFetch("http://localhost:5843/subcategorias");
+  const { data } = useFetch("http://localhost:5813/subcategorias");
   const [startIndex, setStartIndex] = useState(0);
   const [MenuCategoria, setMenuCategoria] = useState(false);
   const [CategoriaMostar, setCategoriaMostar] = useState("");
   const itemsPerPage = 5;
   const { User, registrado } = UseVerificacionUsario();
-  const {cart:u} = useContext(CartContext);
+  const { cart: u } = useContext(CartContext);
   const handleNext = () => {
     setStartIndex((prevIndex) =>
       prevIndex + itemsPerPage < data.length ? prevIndex + itemsPerPage : 0
     );
   };
-
+  const cerrrarSesion = async () => {
+    await signOut(auth);
+  };
   const guardarCategoriaLogalStorage = (subcategoria) => {
     localStorage.setItem("subcategoria", subcategoria);
     setCategoriaMostar(subcategoria);
-    setMenuCategoria(true); // Asegura que el menú se abra al seleccionar una subcategoría
+    setMenuCategoria(true); 
   };
 
   return (
     <div>
       <div className="bg-orange-500 h-10 flex justify-center">
         <h1>Promociones hasta el 50%</h1>
+        <button onClick={cerrrarSesion}>cerrar sesion</button>
       </div>
       <header className=" bg-white flex justify-between p-3">
         <div>
@@ -52,16 +58,7 @@ const Header = () => {
             alt=""
           />
         </div>
-        <div className="w-96 flex">
-          <input
-            className="w-[100%] border-2 border-black h-7 pt-4 pb-4 pl-2"
-            type="text"
-            placeholder="Buscar..."
-          />
-          <span>
-            <Lupa_icon />
-          </span>
-        </div>
+         <InputBuscador />
         <nav className="flex justify-between gap-3">
           {registrado ? (
             <>

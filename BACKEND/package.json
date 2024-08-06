@@ -4,12 +4,13 @@
   "description": "proyecto final (ayte). Se trata de un proyecto de e-commers en el cual nos basaremos en fakestoreapi para realizar el proyecto",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "nodemon src/index.js"
   },
   "author": "Eider Andres Urrego",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "nodemon": "^3.1.4",
     "pg": "^8.12.0"

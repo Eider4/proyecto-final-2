@@ -1,38 +1,52 @@
-{
-  "subcategorias": {
-    "Mochilas": [[1], ""],
-    "Camisas": [[2, 24, 70, 87], ""],
-    "Chaquetas": [[3, 30, 37, 60, 62, 77, 79, 99], ""],
-    "Camisetas": [[4, 63, 64, 85], ""],
-    "Joyas": [[5, 6, 7, 8, 67, 68, 75, 76, 83, 84, 90, 91, 97, 98, 104, 105], ""],
-    "Zapatillas": [[9, 23], ""],
-    "Gafas y Auriculares": [[10, 11, 19, 21, 31, 36, 66], ""],
-    "Relojes": [[12, 20, 22, 34], ""],
-    "Electrodomésticos": [[81, 82, 88, 89, 102, 103], ""],
-    "Teléfonos y Cámaras": [[13, 14, 18, 27, 28], ""],
-    "Tablets y Laptops": [[15, 26, 18], ""],
-    "Muebles de Oficina": [[25], ""],
-    "Muebles y Decoración": [[17, 33, 38, 39, 40], ""],
-    "Deportes y Actividad Física": [[63, 69, 71, 72, 80, 86, 92], ""],
-    "Ropa Casual": [[24, 30, 61, 85], ""],
-    "Ropa Formal": [[2, 70, 87, 93, 94], ""],
-    "Electrónica de Consumo": [[11, 13, 14, 15, 16, 19, 20, 21, 26, 27, 28, 31, 32, 36, 73, 74, 81, 82, 88, 89, 102, 103], ""],
-    "Decoración del Hogar": [[17, 33, 38, 39, 40], ""],
-    "Accesorios de Moda": [[5, 6, 7, 8, 75, 76, 83, 84, 90, 91, 97, 98, 104, 105], ""],
-    "Ropa Deportiva": [[63, 64, 69, 71, 72, 80, 86, 92], ""],
-    "Ropa de Invierno": [[30, 37, 60, 77, 79, 99], ""],
-    "Electrodomésticos de Cocina": [[33, 82, 95, 96], ""],
-    "Electrodomésticos de Limpieza": [[74, 81, 88, 103], ""],
-    "Ropa de Oficina": [[2, 70, 87, 93, 94], ""],
-    "Electrónica de Entretenimiento": [[16, 31, 32, 73, 74, 88, 89], ""],
-    "Electrónica Personal": [[13, 14, 18, 19, 20, 21, 27, 28], ""],
-    "Ropa de Noche": [[61, 78, 100], ""],
-    "Muebles para el Hogar": [[39, 40, 102], ""],
-    "Tecnología de Alta Gama": [[28, 73, 74], ""],
-    "Ropa Casual de Verano": [[4, 24, 30, 63, 64, 85], ""],
-    "Ropa Casual de Invierno": [[30, 37, 60, 77, 79, 99], ""],
-    "Electrodomésticos de Cocina Avanzados": [[33, 95, 96], ""],
-    "Electrodomésticos de Cocina Básicos": [[82], ""],
-    "Electrodomésticos para el Hogar": [[81, 103], ""]
+
+  {
+    "subcategorias": {
+      "Mochilas": [[1], ""],
+      "Camisas": [[2, 24, 70, 87], ""],
+      "Chaquetas": [[3, 30, 37, 60, 62, 77, 79, 99], ""],
+      "Camisetas": [[4, 63, 64, 85], ""],
+      "Joyas": [
+        [5, 6, 7, 8, 67, 68, 75, 76, 83, 84, 90, 91, 97, 98, 104, 105],
+        ""
+      ],
+      "Zapatillas": [[9, 23], ""],
+      "Gafas y Auriculares": [[10, 11, 19, 21, 31, 36, 66], ""],
+      "Relojes": [[12, 20, 22, 34], ""],
+      "Electrodomésticos": [[81, 82, 88, 89, 102, 103], ""],
+      "Teléfonos y Cámaras": [[13, 14, 18, 27, 28], ""],
+      "Tablets y Laptops": [[15, 26, 18], ""],
+      "Muebles de Oficina": [[25], ""],
+      "Muebles y Decoración": [[17, 33, 38, 39, 40], ""],
+      "Deportes y Actividad Física": [[63, 69, 71, 72, 80, 86, 92], ""],
+      "Ropa Casual": [[24, 30, 61, 85], ""],
+      "Ropa Formal": [[2, 70, 87, 93, 94], ""],
+      "Electrónica de Consumo": [
+        [
+          11, 13, 14, 15, 16, 19, 20, 21, 26, 27, 28, 31, 32, 36, 73, 74, 81,
+          82, 88, 89, 102, 103
+        ],
+        ""
+      ],
+      "Decoración del Hogar": [[17, 33, 38, 39, 40], ""],
+      "Accesorios de Moda": [
+        [5, 6, 7, 8, 75, 76, 83, 84, 90, 91, 97, 98, 104, 105],
+        ""
+      ],
+      "Ropa Deportiva": [[63, 64, 69, 71, 72, 80, 86, 92], ""],
+      "Ropa de Invierno": [[30, 37, 60, 77, 79, 99], ""],
+      "Electrodomésticos de Cocina": [[33, 82, 95, 96], ""],
+      "Electrodomésticos de Limpieza": [[74, 81, 88, 103], ""],
+      "Ropa de Oficina": [[2, 70, 87, 93, 94], ""],
+      "Electrónica de Entretenimiento": [[16, 31, 32, 73, 74, 88, 89], ""],
+      "Electrónica Personal": [[13, 14, 18, 19, 20, 21, 27, 28], ""],
+      "Ropa de Noche": [[61, 78, 100], ""],
+      "Muebles para el Hogar": [[39, 40, 102], ""],
+      "Tecnología de Alta Gama": [[28, 73, 74], ""],
+      "Ropa Casual de Verano": [[4, 24, 30, 63, 64, 85], ""],
+      "Ropa Casual de Invierno": [[30, 37, 60, 77, 79, 99], ""],
+      "Electrodomésticos de Cocina Avanzados": [[33, 95, 96], ""],
+      "Electrodomésticos de Cocina Básicos": [[82], ""],
+      "Electrodomésticos para el Hogar": [[81, 103], ""]
+    }
   }
-}
+
